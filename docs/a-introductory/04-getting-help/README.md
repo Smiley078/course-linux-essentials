@@ -187,25 +187,61 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The free command
+### ✅ The free command
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
 
-### ❌ The id command
+It gives you your memory and how much free space you have on there.
+
+::: output
+<pre>
+              total        used        free      shared  buff/cache   available
+Mem:        8271076     5978476     2063248       17720      229352     2158868
+Swap:      25165824      157256    25008568
+</pre>
+:::
+
+### ✅ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
+
+This shows users with their id.
+
+::: output
+<pre>
+uid=1000(smiley078) gid=1000(smiley078) groups=1000(smiley078),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev)
+</pre>
+:::
 
 ### ❌ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
 
-### ❌ The which command
+The command shows all your directories and their contents. To only include directories you add -d.
+
+### ✅ The which command
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
 
-### ❌ The file command
+It locates a command on your system.
+
+::: output
+<pre>
+/usr/bin/pwd
+</pre>
+:::
+
+### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
+
+The command shows you what file type the file is.
+
+::: output
+<pre>
+/home/smiley078/.bashrc: ASCII text
+</pre>
+:::
 
 ### ❌ The type command
 
@@ -215,13 +251,33 @@ Mark challenges using a ✅ once they are finished.
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
-### ❌ The wget command
+### ✅ The wget command
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
-### ❌ The dmesg command
+Via the command wget we can get a file from the Internet.
+
+```bash
+smiley078@HPOmenMaximGovaert:/mnt/c/Users/HP$ wget https://www.maximgovaert.live/
+```
+
+Result: [result](./index.html)
+
+### ✅ The dmesg command
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
+
+It the message buffer of the kernel (diagnostic message).
+
+::: output
+<pre>
+[    0.037275]  Microsoft 4.4.0-19041.1237-Microsoft 4.4.35
+[    0.128329] <3>init: (1) ERROR: ConfigInitializeCommon:570: Failed to mount /usr/lib/wsl/drive
+[    0.128336] : 19
+[    0.128447] <3>init: (1) ERROR: ConfigInitializeCommon:570: Failed to mount /usr/lib/wsl/lib
+[    0.128452] 19
+</pre>
+:::
 
 ### ❌ Checksums
 
@@ -231,13 +287,19 @@ Mark challenges using a ✅ once they are finished.
 
 *What is the use of this hash?*
 
-### ❌ The printenv command
+### ✅ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
 
-### ❌ IP Address
+This command prints out your environment.
+
+### ✅ IP Address
 
 *Find the IP address of your WiFi interface. What command did you use?*
+
+```bash
+smiley078@HPOmenMaximGovaert:/mnt/c/Users/HP$ wifi-status
+```
 
 ### ❌ IP of Sivir Server
 
