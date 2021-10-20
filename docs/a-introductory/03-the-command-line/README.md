@@ -311,9 +311,11 @@ With the option -al we can see a list with hidden files. They are recognizable b
 
 This opens the system's manual pager.
 
-### ❌ What shells are available
+### ✅ What shells are available
 
 **Check the Internet on how you can get a list of all available shells on your system.**
+
+This can be accomplished with `cat /etc/shells`.
 
 ### ✅ What date is it
 

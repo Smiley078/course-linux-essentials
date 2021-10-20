@@ -275,13 +275,15 @@ Mark challenges using a ✅ once they are finished.
 
 *Run it once it's installed. What does it do ?*
 
-### ❌ Nmap
+### ✅ Nmap
 
 *Install the `nmap` package using `apt`.*
 
 *Port scan the server `sivir.devbit.be`. Make sure you are connected to the `Devbit` network. What services are running on this machine?*
 
-### ❌ NodeJS
+ssh
+
+### ✅ NodeJS
 
 *Install `snap` using `apt`. Next use `snap` to install `nodejs`.*
 
@@ -291,7 +293,13 @@ Mark challenges using a ✅ once they are finished.
 console.log("Hello World from JavaScript");
 ```
 
-### ❌ Dhcpdump
+::: output
+<pre>
+Hello World from JavaScript
+</pre>
+:::
+
+### ✅ Dhcpdump
 
 *Install the `dhcpdump` and try to capture some DHCP traffic in the network. Work together with another student and try to capture the DHCP request of his/her laptop. Find out what the MAC Address is and check it using the `ip` or `ipconfig` tool.*
 

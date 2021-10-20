@@ -213,11 +213,11 @@ uid=1000(smiley078) gid=1000(smiley078) groups=1000(smiley078),4(adm),20(dialout
 </pre>
 :::
 
-### ❌ The tree command
+### ✅ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
 
-The command shows all your directories and their contents. To only include directories you add -d.
+The command shows all your directories and their contents. Adding -R makes it so all subdirectories are listed too. To only include directories you add -d.
 
 ### ✅ The which command
 
@@ -243,13 +243,43 @@ The command shows you what file type the file is.
 </pre>
 :::
 
-### ❌ The type command
+### ✅ The type command
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
 
-### ❌ Counting lines and words
+This gives information about the command type.
+
+Result `type ls`:
+
+::: output
+<pre>
+ls is aliased to `ls --color=auto'
+</pre>
+:::
+
+Result `type g++`:
+
+::: output
+<pre>
+g++ is /usr/bin/g++
+</pre>
+:::
+
+### ✅ Counting lines and words
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
+
+Via the command `wc` we can count lines and words in text.
+
+Now we enter the command `wc /mnt/d/code/web/my-awesome-website/index.html`:
+
+::: output
+<pre>
+19  57 905 /mnt/d/code/web/my-awesome-website/index.html
+</pre>
+:::
+
+So this file contains 19 lines, 57 words and 905 characters.
 
 ### ✅ The wget command
 
@@ -301,6 +331,8 @@ This command prints out your environment.
 smiley078@HPOmenMaximGovaert:/mnt/c/Users/HP$ wifi-status
 ```
 
-### ❌ IP of Sivir Server
+### ✅ IP of Sivir Server
 
 *What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
+
+169.254.195.219/16
