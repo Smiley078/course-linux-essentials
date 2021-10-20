@@ -275,6 +275,8 @@ Mark challenges using a ✅ once they are finished.
 
 *Run it once it's installed. What does it do ?*
 
+dpkg install deb http://ftp.nl.debian.org/debian sid main
+
 ### ✅ Nmap
 
 *Install the `nmap` package using `apt`.*
