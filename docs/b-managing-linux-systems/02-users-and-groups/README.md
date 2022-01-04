@@ -391,30 +391,59 @@ This account is currently not available.
 </pre>
 :::
 
-### ❌ Creating group with id
+### ✅ Creating group with id
 
 *Create a group called `hackers` with the specific group id `1337`. Now create two users (students from the class) and add them both the group.*
 
-with setgid
+```bash
+sudo addgroup --gid 1337 hackers
+sudo adduser robin
+sudo adduser jarno
+sudo adduser robin hackers
+sudo adduser jarno hackers
+```
 
-### ❌ Difference false and nologin
+### ✅ Difference false and nologin
 
 *Some user entries are showing `/bin/false` as the shell command. Do some research and explain what the difference is with `/usr/sbin/nologin`.*
+
+When we switch to users with `/bin/false` as the shell command nothing happens and we keep being the same user. While when we switch to users with `/usr/sbin/nologin` then we get this message:
+
+::: output
+<pre>
+This account is currently not available.
+</pre>
+:::
 
 ### ❌ The auth.log file 
 
 *What does the file `/log/var/auth.log` track? Provide an example of a command that shows entries being added to the log after you executed the command. Include the entry here that was added to the file.*
 
-### ❌ Locking out Steve
+### ✅ Locking out Steve
 
 *Create a new user steve and set a password for the user. Login to the `steve` account using `su` to make sure it works.*
 
 *Now lock the user account and make sure there is no way anyone can login as `steve`, not even `root`*
 
-### ❌ Zsh Shell
+```bash
+sudo adduser steve
+sudo usermod --expiredate 1 steve
+```
+
+### ✅ Zsh Shell
 
 *Install the zsh shell on your system. Now change your own shell to `zsh`. Make sure to do this in such a way that a new session will also use `zsh`.*
 
-### ❌ Semester Account
+```bash
+sudo apt install zsh -y
+chsh -s /bin/zsh
+```
+
+### ✅ Semester Account
 
 *Create a new account for an exchange student called `maggie`. Make sure the account can only be used until 31st of January of the next year. Basically only for this semester*.
+
+```bash
+sudo adduser maggie
+sudo usermod --expiredate 2022-01-31 maggie
+```

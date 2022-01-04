@@ -265,26 +265,102 @@ Mark challenges using a ✅ once they are finished.
 *Locate the following files on your system:*
 
 * `sudoers.dist`
+
+  ```bash
+  locate sudoers.dist
+  ```
+
+  ::: output
+  <pre>
+  /usr/share/doc/sudo/examples/sudoers.dist
+  </pre>
+  :::
+
 * the configuration file `ssh_config`
+
+  ```bash
+  locate ssh_config
+  ```
+
+  ::: output
+  <pre>
+  /etc/ssh/ssh_config
+  /etc/ssh/ssh_config.d
+  /mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/Git/etc/ssh/ssh_config
+  /mnt/c/Program Files/Git/etc/ssh/ssh_config
+  /usr/share/man/man5/ssh_config.5.gz
+  </pre>
+  :::
+
 * `auth.log`
+
+  ```bash
+  
+  ```
+
+  This gives no output.
 
 ### ❌ Python man-pages
 
 *Use the `whereis` tool to determine the location of the man-pages of `python`.*
 
-### ❌ Python man-pages
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the `find` binary.*
 
-### ❌ Which
+```bash
+whereis find
+```
+
+::: output
+<pre>
+find: /usr/bin/find /mnt/c/windows/system32/find.exe /mnt/c/Program Files/Git/usr/bin/find.exe /usr/share/man/man1/find.1.gz /usr/share/info/find.info-1.gz /usr/share/info/find.info-2.gz /usr/share/info/find.info.gz
+</pre>
+:::
+
+### ✅ Which
 
 *What is the location of the following commands for the current user:*
 
 * `passwd`
+
+  ```bash
+  which passwd
+  ```
+
+  ::: output
+  <pre>
+  /usr/bin/passwd
+  </pre>
+  :::
+
 * `locate`
+
+  ```bash
+  which locate
+  ```
+
+  ::: output
+  <pre>
+  /usr/bin/locate
+  </pre>
+  :::
+
 * `fdisk`
 
+  ```bash
+  which fdisk
+  ```
+
+  ::: output
+  <pre>
+  /usr/sbin/fdisk
+  </pre>
+  :::
+
 *Why are the location of `passwd` and `fdisk` different? What is `fdisk` used for?*
+
+The `bin` directory is for all the regular commands and the `sbin` directory consists of all the sudo commands. The command `fdisk` is used to manipulate the disk partition table.
 
 ### Use find for the following challenges
 
@@ -294,17 +370,60 @@ Make sure to redirect the `permission denied` errors to `/dev/null` for all sear
 
 *Find the file `kernel.log`.*
 
-#### ❌ .bashrc
+```bash
+find / -name "kernel.log" 2>/dev/null
+```
+
+::: output
+<pre>
+
+</pre>
+:::
+
+#### ✅ .bashrc
 
 *Find the files `.bashrc`.*
 
-#### ❌ System Configuration Files
+```bash
+find / -name "*.bashrc" 2>/dev/null
+```
+
+::: output
+<pre>
+/etc/bash.bashrc
+/etc/skel/.bashrc
+/home/ritch/.bashrc
+/home/smiley078/.bashrc
+</pre>
+:::
+
+#### ✅ System Configuration Files
 
 *Search for files that end with the extension `.conf` and contain a filename with the keyword `system` in the `/etc` directory.*
+
+```bash
+find / -name "*system*.conf" 2>/dev/null
+```
+
+::: output
+<pre>
+/etc/systemd/system.conf
+</pre>
+:::
 
 #### ❌ User Readable Files
 
 *What option can we use on `find` to make sure the current user can read the file? Don't use the `-perm` option. There is a better option. Give a nice example.*
+
+```bash
+find -readable
+```
+
+::: output
+<pre>
+
+</pre>
+:::
 
 #### ❌ Altered Log Files
 
